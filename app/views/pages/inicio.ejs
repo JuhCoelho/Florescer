@@ -220,6 +220,7 @@ Sem frutos, não há futuro.</p>
     required 
     maxlength="20"
     value="<%= dados ? dados.nome : '' %>" 
+     class="<%= cssErros.nome %>"
   >
   <span class="<%= cssErros.nome %>"><%= msgErros.nome %></span>
 
@@ -237,9 +238,9 @@ Sem frutos, não há futuro.</p>
     placeholder="Deixe seu comentário aqui..." 
     required 
     maxlength="300"
-    class="<%= cssErros.comentario %>"
+    class="<%= cssErros.texto %>"
   ><%= dados ? dados.comentario : '' %></textarea>
-  <span class="<%= cssErros.comentario %>"><%= msgErros.comentario %></span>
+  <span class="<%= cssErros.texto %>"><%= msgErros.texto %></span>
 
   <button type="submit">Enviar</button>
 </form>
