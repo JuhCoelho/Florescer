@@ -1,0 +1,779 @@
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('../fonts/OPTIPlanet-Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Cathalia';
+  src: url('../fonts/Cathalia.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:300;
+  font-style: normal;
+}
+
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(253, 247, 236);
+  
+}
+
+
+.menu-navegar{
+position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Garante que fique acima dos outros elementos */
+  background-color: transparent; /* Começa transparente */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  box-shadow: none; /* Opcional: sombra para destacar */
+
+}
+
+.menu-navegar.menu-bg-ativa {
+  background-color: #F2CB05; 
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);/* Cor de fundo quando rolar */
+}
+
+#menu {
+  z-index: 80;
+}
+
+nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#menu-bar {
+  width: 45px;
+  height: 40px;
+  margin: 30px 0 20px 20px;
+  cursor: pointer;
+}
+
+.bar {
+  height: 5px;
+  width: 100%;
+  background-color: #ffffff;
+  display: block;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+#bar1 {
+  transform: translateY(-4px);
+}
+
+#bar3 {
+  transform: translateY(4px);
+}
+
+.nav {
+    position: absolute;
+  transition: 0.3s ease;
+  right: 0;
+  top:80px;
+  display: none;
+  transition:  0.3s ease;
+}
+
+.nav ul {
+  padding: 0 22px;
+   
+}
+
+.nav li {
+  list-style: none;
+  padding: 12px 0;
+   opacity: 0;
+   font-family: "MinhaFonte";
+  
+  transform: translateY(-20px);
+  animation: slideIn 0.5s ease-out forwards;
+  animation-delay: 0.3s; /* Espera 0.3 segundos */
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav li a {
+  color: rgb(40, 14, 61);
+  font-size: 16px;
+  text-decoration: none;
+   
+}
+
+.nav li a:hover {
+   color: rgb(63, 34, 86);
+  
+}
+
+
+.nav li a:hover {
+  font-weight: bold;
+}
+
+
+.menu-bg {
+  position: fixed; /* fixo para cobrir a tela */
+  top: 0px;
+  right: -200px;          /* ancorado no canto direito */
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, #917ED9, #917ED9);
+  border-radius: 50%;
+  transition: width 0.3s ease, height 0.3s ease;
+  transform-origin: right center; /* transforma a partir do lado direito */
+  z-index: 1;
+}
+
+/* quando abrir (classe que ativa o fundo grande) */
+.menu-bg.open {
+  width: 100px;
+  height: 100px;
+}
+
+
+
+nav ul {
+    z-index: 10;
+    position: relative;
+}
+
+.change {
+  display: block;
+}
+
+.change .bar {
+  background-color: white;
+}
+
+.change #bar1 {
+  transform: translateY(4px) rotateZ(-45deg);
+}
+
+.change #bar2 {
+  opacity: 0;
+}
+
+.change #bar3 {
+  transform: translateY(-6px) rotateZ(45deg);
+}
+
+.change-bg {
+  width: 400px;
+  height: 360px;
+ 
+}
+
+
+.inicial {
+  background-image: url('../imagens/../imagens/abelha principal.jpg'); /* Corrigido o uso do `url()` */
+  background-size: cover;         /* cobre toda a seção */
+  background-position: center;    /* centraliza a imagem */
+  background-repeat: no-repeat;   /* evita repetir a imagem */
+  height: 100vh;                  /* ocupa a tela toda */
+  position: relative;            /* pra usar ::before depois */
+}
+
+
+.inicial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+  z-index: 1;
+}
+
+
+.inicial .conteudo {
+  position: relative;
+  z-index: 2;
+  color: white; /* pra aparecer sobre o fundo escuro */
+  padding: 80px;
+}
+
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 5;
+  padding: 10px;
+}
+
+.logo img {
+  height: 60px;
+  z-index: 10;
+}
+
+#menu {
+  position: relative;
+  z-index: 80;
+}
+
+#menu-bar {
+  position: relative; /* NÃO use absolute aqui, pois ele quebra o fluxo do flex */
+  width: 45px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.topo img {
+    z-index: 10;
+    height: 80px;
+}
+
+
+.texto-inicial{
+    bottom: 0;
+    z-index: 90;
+    position: absolute;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+
+.parallax {
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Each one with a different image */
+.parallax-1 {
+  background-image: url('../imagens/borboleta2.jpg');
+}
+
+.parallax-2 {
+  background-image: url('../imagens/abelha3.jpg');
+}
+
+.parallax-3 {
+  background-image: url('../imagens/borboleta.jpg');
+}
+
+
+.conteudo {
+  padding: 10px;
+  background-color: rgb(253, 247, 236);
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+
+.secao-slide {
+  padding: 10px 20px;
+ background-color: rgb(253, 247, 236);
+  text-align: center;
+}
+
+.carrossel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.card {
+  flex: 0 0 300px;
+  height: 450px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+/* Filtro escuro sobre a imagem */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+ background: linear-gradient(to bottom, rgba(0, 0, 0, 0.458), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.792));/* escurece a imagem */
+  z-index: 0;
+}
+
+/* botão ver mais */
+.ver-mais {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+/* texto na parte de baixo */
+.info {
+  position: absolute;
+  bottom: 20px;
+  left: 15px;
+  right: 15px;
+  z-index: 1;
+  color: white;
+  text-align: left;
+}
+
+.info h3 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.info p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.secao-comentarios {
+  padding: 10px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  
+  border-radius: 12px;
+  font-family: "Unica77 LL";
+}
+
+.secao-comentarios h2 {
+   position: relative;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+   font-family: 'MinhaFonte', Arial, sans-serif;
+  color: #333;
+}
+
+
+.secao-comentarios h2::after {
+  content: '´'; /* apóstrofo ou acento */
+  position: absolute;
+  right: 42px; /* ajuste a posição */
+  top: -1px;
+  font-size: 20px;
+  color: #333;
+}
+
+
+/* Formulário */
+.form-comentario {
+  margin-bottom: 40px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+}
+
+.form-comentario input,
+.form-comentario textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 10px;
+  font-family: "Montserrat";
+  
+  background-color: #fffbfb;
+  color: #ccc;
+  
+}
+
+.form-comentario input:focus,
+.form-comentario textarea:focus, select:focus{
+ 
+  outline: none;
+  border: 1px solid #d4af4a;
+  
+  
+}
+
+
+select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 10px;
+  font-family: "Montserrat";
+  width: 100%;
+  background-color: #fffbfb;
+  color: #837e7e;
+}
+
+.form-comentario button {
+  align-self: flex-start;
+  background-color: #917ED9;
+  color: white;
+  font-family: "Montserrat";
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.form-comentario button:hover {
+  background-color: #6d5bac;
+}
+
+textarea{
+  resize: none;
+  height: 100px;
+}
+
+/* Comentários */
+.lista-comentarios {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comentario {
+  background-color: rgb(255, 253, 248);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+         /* preserva quebras de linha e quebra texto automaticamente */
+  box-sizing: border-box;
+}
+
+.comentario h4 {
+  margin: 0 0 5px;
+  color: #333;
+  font-size: 20px;
+  font-family: "Montserrat";
+}
+
+.comentario p {
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+  padding: 0;
+  word-wrap: break-word;         /* quebra palavras longas */
+  white-space: pre-wrap;  
+}
+
+
+
+
+ /* Container da seção */
+  #quem-somos {
+    padding: 4rem 1rem;
+    background-color: #ecfdf5; /* verde claro */
+    text-align: center;
+  }
+
+  #quem-somos h2 {
+    font-size: 2.5rem;
+    color: #166534; /* verde escuro */
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+
+  /* Container do carrossel */
+  .carousel-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  /* Área rolável dos slides */
+  .carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Esconder barra de rolagem no Chrome, Edge e Safari */
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  /* Esconder barra no Firefox */
+  .carousel-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Cada card */
+  .carousel-slide {
+    flex: 0 0 280px;
+    height: 200px;
+   
+    background: #a194d1;
+    border-radius: 1.5rem;
+    color: #ececec;
+    box-shadow: 0 4px 8px rgba(56, 22, 101, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+  }
+  .carousel-slide:hover {
+    box-shadow: 0 8px 20px rgba(58, 22, 101, 0.3);
+  }
+
+  /* Foto redonda */
+  .carousel-slide img {
+    width: 112px;
+    height: 112px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ffffff; /* verde claro */
+    margin-bottom: 1rem;
+  }
+
+  /* Nome */
+  .carousel-slide p.name {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #f8eeff;
+    margin: 0.25rem 0;
+    text-align: center;
+      overflow: hidden;
+  }
+
+  .leticia {
+     font-size: 0.8rem;
+     
+
+  }
+
+  /* Turma */
+  .carousel-slide p.class {
+    color: #fcffa7;
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* Botões */
+  .carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #166534;
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+  .carousel-button:hover {
+    opacity: 1;
+  }
+
+  .carousel-button.prev {
+    left: -60px;
+  }
+  .carousel-button.next {
+    right: -60px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 700px) {
+    .carousel-slide {
+      flex: 0 0 220px;
+    }
+    .carousel-button.prev {
+      left: -40px;
+      display: none;
+    }
+    .carousel-button.next {
+      right: -40px;
+        display: none;
+    }
+  }
+  @media (max-width: 400px) {
+    .carousel-slide {
+      flex: 0 0 160px;
+    }
+  }
+
+
+.texto-inicial{
+  padding: 0 30px 20px 10px;
+  font-family: 'MinhaFonte', Courier, monospace;
+}
+
+
+  #frase{
+    font-size: 35px;
+    margin: 0px 0 10px 0;
+  }
+
+  #subtitulo{
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+  .sla{
+    font-family:  'Cathalia';
+    font-size: 30px;
+    color: #F2CB05;
+  }
+
+  .slide-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: slideDown 1s ease-out forwards;
+}
+
+@keyframes slideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.conteudo h2{
+  font-family: "Cathalia";
+}
+#sobre-nos h2 {
+  position: relative;
+  display: inline-block; /* opcional, ajuda no tamanho do h2 */
+}
+
+#sobre-nos h2::after {
+  content: '´'; /* apóstrofo ou acento */
+  position: absolute;
+  right: 14px; /* ajuste a posição */
+  top: -5px;
+  font-size: 20px;
+  color: #333;
+}
+
+.conteudo p{
+  text-align: left;
+  color: #333;
+    line-height: 1.8;
+    font-size: 16px;
+    padding: 0 5px;
+    font-family: 'Montserrat', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#reflexao {
+  text-align: center;
+  margin: 50px 0;
+}
+
+.info p{
+  color: white;
+}
+
+
+.dados-comentario{
+  display: flex;
+  justify-content: space-between;
+}
+
+.funcao{
+  text-align: left;
+  align-self: flex-start;
+  color: #6d5bac;
+  font-family: "Montserrat";
+  font-size: small;
+  margin-top: 0;
+}
+
+
+.paginacao{
+  margin: 20px auto;
+ 
+  width: 50%;
+  padding: 10px;
+  border-radius: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paginacao a{
+  text-decoration: none;
+  font-family: "Montserrat";
+  color: #d4af4a;
+  padding: 5px;
+}
+
+.pagina-atual{
+   text-decoration: none;
+  font-family: "Montserrat";
+  color: #6d5bac;
+  background-color:#d3cee7;
+  width:20px;
+  height: 20px;
+ 
+  padding: 5px;
+  margin: 0 2px;
+}
+
+
+
+
+.rodape {
+  background-color: #3c2a5a;
+  color: #f3eaff;
+  padding: 60px 13px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  font-family: "Montserrat";
+}
+
+.container-rodape {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.rodape p {
+  margin: 5px 0;
+}

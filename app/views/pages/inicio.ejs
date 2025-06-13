@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florescer | A importância dos agentes polinizadores para a manutenção da vida</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <script src="js.js"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@0.5.5/dist/simple-notify.min.js"></script>
+   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+</head>
+<body>
+
+<% if (typeof scrollToComments !== 'undefined' && scrollToComments) { %>
+<script>
+  window.onload = () => {
+    location.hash = '#comentarios'; // 'comentarios' é o id da seção de comentários
+  };
+</script>
+<% } %>
+
+
+<% if (dadosNotificacao) { %>
+   <script>
+  new Notify({
+    status: "<%= dadosNotificacao.tipo %>", // ex: 'success', 'error'
+    title: "<%= dadosNotificacao.titulo %>",
+    text: "<%= dadosNotificacao.mensagem %>",
+    effect: 'fade',
+    speed: 300,
+    customClass: null,
+    customIcon: null,
+    showIcon: true,
+    showCloseButton: true,
+    autoclose: true,
+    autotimeout: 3000,
+    gap: 20,
+    distance: 20,
+    type: 1,
+    position: 'top right'
+
+  });
+</script>
+
+<% } %>
+
+
+    <main> 
+
+        <section class="inicial">
+
+<section class="menu-navegar">
+  
+              <section class="topo">
+    <div class="logo"><img src="../imagens/logo1.png" alt="logo"></div>
+  
+    <div id="menu">
+      <div id="menu-bar" onclick="menuOnClick()">
+        <div id="bar1" class="bar"></div>
+        <div id="bar2" class="bar"></div>
+        <div id="bar3" class="bar"></div>
+      </div>
+  
+  
+    </div>
+  </section>
+  
+  <nav class="nav" id="nav">
+        <ul>
+      <li><a href="#sobre-nos">Sobre Nós</a></li>
+      <li><a href="#polinizadores">Polinizadores</a></li>
+      <li><a href="#comentarios-lista">Comentários</a></li>
+      <li><a href="#nossa-equipe">Nossa Equipe</a></li>
+  
+        </ul>
+      </nav>
+  
+  
+  
+  
+  
+  <section class="menu-bg" id="menu-bg"></section>
+</section>
+
+<section class="texto-inicial slide-down">
+    
+  <img src="imagens/bandeira.png" alt="">
+    <h1 id="frase">Pequenos voos, grande impacto</h1>
+   <p id="subtitulo">Entenda como os polinizadores são essenciais para a manutenção da vida na Terra.</p>
+</section>
+
+
+        </section>
+
+        <section class="conteudo" id="sobre-nos">
+  <h2>Sobre Nós</h2>
+  <p>O projeto Florescer, da SLA 2025, é formado por alunos do 3º ano das turmas INI e EDF, e tem como objetivo compartilhar a importância dos polinizadores para a vida no planeta. <br> <br>
+Nas discussões ambientais, muito se fala sobre queimadas, desmatamento e poluição, mas e os polinizadores? <br> <br>
+
+Insetos e pequenos animais, como abelhas, borboletas e beija-flores, são essenciais para a reprodução das plantas, garantindo a continuidade das áreas naturais e, inclusive, a produção de alimentos. A vida de todas as espécies depende das plantas e dos alimentos, que só são possíveis graças à polinização. <br> <br>
+
+Nosso projeto também busca provocar uma reflexão sobre os perigos que enfrentamos enquanto o consumismo desenfreado, a poluição ambiental, a poluição luminosa e outros fatores ameaçam os polinizadores com risco de extinção.
+
+</p>
+</section>
+
+        
+<section class="parallax parallax-1"></section>
+
+<section class="conteudo">
+  <h2>A importância dos polinizadores</h2>
+  <p>Borboletas, abelhas, beija-flores, morcegos e até algumas espécies de formigas têm algo em comum: são polinizadores. <br><br>
+Cada um deles atua de forma única, ajudando diferentes plantas a se reproduzirem. <br> <br>
+Eles garantem o equilíbrio dos ecossistemas, a variedade das espécies vegetais e a manutenção da vida animal.
+No entanto, a ação humana vem colocando esses pequenos agentes em risco. <br><br>
+Preservá-los é essencial para garantir um futuro mais sustentável e justo para todos.</p>
+</section>
+
+<section class="parallax parallax-2"></section>
+
+<section class="conteudo">
+  
+  <p id="reflexao">Sem polinizadores, não há flores. <br>
+Sem flores, não há frutos. <br>
+Sem frutos, não há futuro.</p>
+</section>
+
+<section class="parallax parallax-3">
+
+    
+
+</section>
+<section class="secao-slide conteudo" id="polinizadores">
+  <h2>Principais agentes polinizadores</h2>
+  <p>Você se lembra quais espécies citamos?</p>
+
+  <div class="carrossel">
+    <div class="card" style="background-image: url('imagens/abelha3.jpg');">
+      <a href="abelha1.html" class="ver-mais">ver mais ></a>
+      <div class="info">
+        <h3>Abelha Jopa</h3>
+        <p>Especialista em flores amarelas.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('imagens/borboleta.jpg');">
+      <a href="borboleta.html" class="ver-mais">ver mais ></a>
+      <div class="info">
+        <h3>Borboleta Azul</h3>
+        <p>Leve, rápida e essencial na polinização.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('imagens/morcego.jpg');">
+      <a href="morcego.html" class="ver-mais">ver mais ></a>
+      <div class="info">
+        <h3>Morcego Frugívoro</h3>
+        <p>Atua durante a noite polinizando flores tropicais.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('imagens/beija-flor.jpg');">
+      <a href="beijaflor.html" class="ver-mais">ver mais ></a>
+      <div class="info">
+        <h3>Beija-flor</h3>
+        <p>Se alimenta do néctar e espalha o pólen com graça.</p>
+      </div>
+    </div>
+
+    <div class="card" style="background-image: url('imagens/vespa.jpg');">
+      <a href="vespa.html" class="ver-mais">ver mais ></a>
+      <div class="info">
+        <h3>Vespa Solitária</h3>
+        <p>Apesar da fama, também poliniza flores silvestres.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="secao-comentarios conteudo">
+  <h2>Deixar um comentário</h2>
+
+  <!-- Show validation errors -->
+
+   <% 
+  let cssErros = {nome: "", funcao: "", texto: ""};
+  let msgErros = {nome: "", funcao: "", texto: ""};
+
+  if (listaErros) {
+    listaErros.forEach(function (elemento) {
+      if (elemento.path == "nome") {
+        cssErros.nome = "erro-form";
+        msgErros.nome = elemento.msg;
+      }
+      if (elemento.path == "funcao") {
+        cssErros.funcao = "erro-form";
+        msgErros.funcao = elemento.msg;
+      }
+      if (elemento.path == "texto") {
+        cssErros.texto = "erro-form";
+        msgErros.texto = elemento.msg;
+      }
+    });
+  }
+%>
+
+  
+
+  <!-- Formulário no topo -->
+ <form class="form-comentario" action="/comentarios" method="POST" id="comentarios">
+  <p>Agradecemos sua visita à nossa apresentação! Se quiser, deixe um comentário abaixo.</p>
+
+  <input 
+    type="text" 
+    name="nome" 
+    placeholder="Seu nome" 
+    required 
+    maxlength="20"
+    value="<%= dados ? dados.nome : '' %>" 
+  >
+  <span class="<%= cssErros.nome %>"><%= msgErros.nome %></span>
+
+  <select name="funcao" required class="<%= cssErros.funcao %>">
+    <option value="" disabled <%= !dados || !dados.funcao ? 'selected' : '' %> >Selecione sua função</option>
+    <option value="Estudante" <%= dados && dados.funcao === 'Estudante' ? 'selected' : '' %> >Estudante</option>
+    <option value="Professor" <%= dados && dados.funcao === 'Professor' ? 'selected' : '' %> >Professor</option>
+    <option value="Funcionário" <%= dados && dados.funcao === 'Funcionário' ? 'selected' : '' %> >Funcionário</option>
+    <option value="Visitante" <%= dados && dados.funcao === 'Visitante' ? 'selected' : '' %> >Visitante</option>
+  </select>
+  <span class="<%= cssErros.funcao %>"><%= msgErros.funcao %></span>
+
+  <textarea 
+    name="texto" 
+    placeholder="Deixe seu comentário aqui..." 
+    required 
+    maxlength="300"
+    class="<%= cssErros.comentario %>"
+  ><%= dados ? dados.comentario : '' %></textarea>
+  <span class="<%= cssErros.comentario %>"><%= msgErros.comentario %></span>
+
+  <button type="submit">Enviar</button>
+</form>
+<section class="conteudo">
+  
+  
+    <h2 id="comentarios-lista">Comentários</h2>
+  
+  <div class="lista-comentarios" >
+    <% if (comentarios && comentarios.length > 0) { %>
+      <% comentarios.forEach(c => { %>
+        <div class="comentario">
+          <section class="dados-comentario">
+            <h4><%= c.nome %></h4>  <small><%= c.data_criacao.toLocaleDateString('pt-BR') %></small>
+
+          </section>
+          <small class="funcao"><%= c.funcao %></small>
+        
+          <p><%= c.texto %></p>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>Seja o primeiro a comentar!</p>
+    <% } %>
+  </div>
+  
+  <% if (paginador) { %>
+    <div class="paginacao">
+      <% for(let i = 1; i <= paginador.total_paginas; i++) { %>
+        <% if (paginador.pagina_atual == i) { %>
+          <span class="pagina-atual"><%= i %></span>
+        <% } else { %>
+          <a href="/?pagina=<%= i %>#comentarios-lista"><%= i %></a>
+        <% } %>
+      <% } %>
+    </div>
+  <% } %>
+  
+  
+</section>
+    
+</section>
+
+
+
+
+
+
+
+</section>
+
+<script>
+
+    let currentPage = 1;
+const postId = 1; // ID do post que quer os comentários
+
+const commentsContainer = document.getElementById("comments-container");
+const loadMoreBtn = document.getElementById("load-more");
+
+async function loadComments(page) {
+  try {
+    const response = await fetch(`/comments?postId=${postId}&page=${page}`);
+    const data = await response.json();
+
+    // Adiciona os comentários na página
+    data.comments.forEach(comment => {
+      const div = document.createElement("div");
+      div.textContent = comment.text; // ajuste conforme seu campo do comentário
+      commentsContainer.appendChild(div);
+    });
+
+    // Se já carregou todos, esconde o botão
+    if ((page * 5) >= data.totalComments) {
+      loadMoreBtn.style.display = "none";
+    }
+  } catch (err) {
+    console.error("Erro ao carregar comentários:", err);
+  }
+}
+
+// Ao clicar no botão, carrega a próxima página
+loadMoreBtn.addEventListener("click", () => {
+  currentPage++;
+  loadComments(currentPage);
+});
+
+// Carrega a primeira página quando a página abre
+loadComments(currentPage);
+
+</script>
+
+
+<!-- Swiper CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+
+
+
+<section id="nossa-equipe" class="conteudo">
+  <h2>Nossa Equipe</h2>
+  <div class="carousel-container">
+    <button class="carousel-button prev" aria-label="Previous">&lt;</button>
+    <div class="carousel-track" tabindex="0">
+      <!-- Card exemplo -->
+      <div class="carousel-slide">
+        <img src="imagens/anajulia.png" alt="Ana Júlia" />
+        <p class="name">Ana Júlia</p>
+        <p class="class">INI3AM</p>
+      </div>
+        <div class="carousel-slide">
+        <img src="imagens/vinicius.png" alt="Vinícius" />
+        <p class="name">Vinícius</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/duda.png" alt="Duda" />
+        <p class="name">Duda</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/caua.png" alt="Cauã" />
+        <p class="name">Cauã</p>
+        <p class="class">INI3AM</p>
+      </div>
+       <div class="carousel-slide">
+        <img src="imagens/evelyn.png" alt="Evelyn" />
+        <p class="name">Evelyn</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/juliacarvalho.png" alt="Julia Carvalho" />
+        <p class="name">Julia Carvalho</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/leticiasilva.png" alt="Letícia Silva" />
+        <p class="name">Letícia Silva</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/leticiasoares.png" alt="Leticia Soares" />
+        <p class="name">Leticia Soares</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide leticia">
+        <img src="imagens/leticia1.png" alt="Leticia Santana" />
+        <p class="name ">Leticia S.</p>
+        <p class="class">INI3AM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/sthefany.jpg" alt="Sthefany" />
+        <p class="name">Sthefany</p>
+        <p class="class">INI3AM</p>
+      </div>
+    
+      <div class="carousel-slide">
+        <img src="imagens/jorge.jpg" alt="Jorge" />
+        <p class="name">Jorge</p>
+        <p class="class">EDF3DM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/ana.png" alt="Ana" />
+        <p class="name">Ana</p>
+        <p class="class">EDF3DM</p>
+      </div>
+      <div class="carousel-slide">
+        <img src="imagens/vitoria.png" alt="Vitoria" />
+        <p class="name">Vitoria</p>
+        <p class="class">INI3AM</p>
+      </div>
+     
+    </div>
+    <button class="carousel-button next" aria-label="Next">&gt;</button>
+  </div>
+</section>
+ </main>
+
+
+<footer class="rodape">
+  <div class="container-rodape">
+    <p>&copy; 2025 Florescer - SLA. </p>
+    <p>Feito com 💛 por estudantes do 3º ano | INI & EDF</p>
+   
+  </div>
+</footer>
+
+
+<script>
+  const track = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-button.prev');
+  const nextBtn = document.querySelector('.carousel-button.next');
+
+  const scrollAmount = 300;
+
+  prevBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  nextBtn.addEventListener('click', () => {
+    track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+</script>
+
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<script>
+  new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 }
+    }
+  });
+</script>
+
+
+
+   
+
+
+    <script>
+        function menuOnClick() {
+  document.getElementById("menu-bar").classList.toggle("change");
+  document.getElementById("nav").classList.toggle("change");
+  document.getElementById("menu-bg").classList.toggle("change-bg");
+}
+    </script>
+
+
+<script>
+window.addEventListener('scroll', function() {
+  const menu = document.querySelector('.menu-navegar');
+  if (window.scrollY > 0) {
+    menu.classList.add('menu-bg-ativa');
+  } else {
+    menu.classList.remove('menu-bg-ativa');
+  }
+});
+</script>
+    
+</body>
+</html>
