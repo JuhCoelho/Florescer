@@ -777,3 +777,8 @@ textarea{
 .rodape p {
   margin: 5px 0;
 }
+
+
+.texto-comentario{
+  padding: 0 !important;
+}
