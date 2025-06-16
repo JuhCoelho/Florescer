@@ -21,6 +21,11 @@ router.get("/comentarios/excluir", function (req, res) {
   comentariosController.excluirComentario(req, res);
 });
 
+router.get("/abelhas", function (req, res) {
+  res.render("pages/abelhas");
+});
+
+
 module.exports = router;
 
 
