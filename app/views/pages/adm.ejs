@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área Administrativa</title>
+</head>
+<body>
+
+
+    
+    <table>
+  <caption>Comentários</caption>
+  <thead>
+    <tr>
+      <th>Comentário</th>
+      <th>Excluir</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% comentarios.forEach(function(comentario) { %>
+      <tr>
+        <td><%= comentario.texto %></td>
+        <td>
+         
+             <button onclick=<%=" window.location='/excluir?id="+ comentario.id+"'" %> class="
+                                material-symbols-outlined delete">
+                                delete
+                            </button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>
+
+    
+</body>
+</html>

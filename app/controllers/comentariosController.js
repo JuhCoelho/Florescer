@@ -138,31 +138,33 @@ console.log("Conteúdo:", resultados);
   },
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  excluirComentario: async (req, res) => {
-    const { id } = req.query;
+   listarComentariosAdm: async (req, res) => {
+   
     try {
-      await comentariosModel.delete(id);
-      res.redirect("/inicio");
-    } catch (error) {
-      console.log(error);
-      res.json({ erro: "Falha ao excluir comentário" });
+      results = await comentariosModel.findAll();
+      res.render("pages/adm", { comentarios: results });
+    } catch (e) {
+      console.log(e); // exibir os erros no console do vs code
+      res.json({ erro: "Falha ao acessar dados" });
     }
   },
+
+
+
+
+
+
+excluirComentario: async (req, res) => {
+    let { id } = req.query;
+    try {
+      results = await comentariosModel.delete(id);
+      res.redirect("/adm");
+    } catch (e) {
+      console.log(e);
+      res.json({ erro: "Falha ao acessar dados" });
+    }
+  },
+
 };
 
 module.exports = comentariosController;

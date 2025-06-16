@@ -17,13 +17,21 @@ router.post(
   }
 );
 
-router.get("/comentarios/excluir", function (req, res) {
-  comentariosController.excluirComentario(req, res);
-});
 
 router.get("/abelhas", function (req, res) {
   res.render("pages/abelhas");
 });
+
+
+router.get("/adm", comentariosController.listarComentariosAdm);
+
+
+router.get("/excluir", function (req, res) {
+  comentariosController.excluirComentario(req, res);
+});
+
+
+
 
 
 module.exports = router;
