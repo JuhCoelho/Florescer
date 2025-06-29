@@ -730,11 +730,12 @@ textarea{
 .paginacao{
   margin: 20px auto;
  
-  width: 50%;
+  
   padding: 10px;
   border-radius: 7px;
   display: flex;
   justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .paginacao a{
@@ -754,6 +755,7 @@ textarea{
  
   padding: 5px;
   margin: 0 2px;
+
 }
 
 
