@@ -182,10 +182,13 @@ nav ul {
 
 .change-bg {
   width: 400px;
-  height: 360px;
+  height: 390px;
  
 }
 
+#galeria{
+  padding-top: 40px;
+}
 
 .inicial {
   background-image: url('../imagens/../imagens/abelha principal.jpg'); /* Corrigido o uso do `url()` */
