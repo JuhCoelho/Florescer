@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const moment = require("moment");
+const uploader = require("../util/uploader")("./app/public/imagens/perfil/");
 
 
 const comentariosController = require("../controllers/comentariosController");
@@ -17,6 +18,7 @@ router.post(
   }
 );
 
+router.get('/galeria', comentariosController.mostrarGaleria);
 
 router.get("/abelhas", function (req, res) {
   res.render("pages/abelhas");

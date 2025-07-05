@@ -1,5 +1,10 @@
 const comentariosModel = require("../models/comentariosModel");
 const { body, validationResult } = require("express-validator");
+const {removeImg} = require("../util/removeImg");
+const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
+const https = require('https');
+const db = require('../../config/pool_conexoes');
+
 
 const comentariosController = {
   regrasValidacao: [
@@ -165,6 +170,19 @@ excluirComentario: async (req, res) => {
     }
   },
 
+
+
+mostrarGaleria: async (req, res) => {
+  try {
+    const [resultados] = await db.query('SELECT * FROM galeria ORDER BY id ASC');
+    res.render('pages/galeria', { midias: resultados });
+  } catch (err) {
+    res.status(500).send('Erro ao carregar galeria');
+  }
+},
 };
+
+ 
+
 
 module.exports = comentariosController;

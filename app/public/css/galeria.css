@@ -1,0 +1,200 @@
+@font-face {
+  font-family: 'MinhaFonte';
+  src: url('../fonts/OPTIPlanet-Bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Cathalia';
+  src: url('../fonts/Cathalia.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:300;
+  font-style: normal;
+}
+
+
+
+body {
+     background-color: rgb(253, 247, 236);
+     margin: 0;
+     padding: 0;
+ 
+
+}
+
+
+
+.voltar a{
+   
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    text-decoration: none;
+    
+
+}
+
+.voltar i {
+    margin-right: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Cathalia", sans-serif;
+    color: #333;
+    margin-top: 40px;
+}
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas em telas grandes */
+    gap: 2px; /* sem espaço entre os itens */
+    padding: 0;
+    margin: auto; /* centraliza a section se necessário */
+    max-width: 1200px; /* opcional: limite de largura para não ficar muito esticado */
+}
+
+.item-galeria {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 900px) {
+    .galeria {
+        grid-template-columns: repeat(4, 1fr); /* 3 colunas em tablets/mobile */
+    }
+}
+
+@media (max-width: 600px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr); /* 2 colunas em telas bem pequenas */
+    }
+}
+
+.item-galeria img,
+.item-galeria video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+.item-galeria:hover img,
+.item-galeria:hover video {
+  filter: brightness(0.6); /* escurece */
+  cursor: pointer;
+}
+.modal {
+    background:#fff; padding:20px; border-radius:8px; max-width:90vw; max-height:90vh; text-align:center; position:relative;
+}
+
+#modal-galeria {
+  display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;
+}
+
+#modal-legenda {
+    margin-top:30px;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+    width: 70%;
+    margin: auto;
+}
+
+#fechar-modal{
+    position:absolute; top:20px; right:30px; cursor:pointer; font-size:2em; color: #fff;
+}
+
+#modal-conteudo {
+    padding:20px; border-radius:8px; max-width:90vw; max-height:90vh; text-align:center; position:relative;
+}
+
+#modal-midia {
+    max-width: 100%;
+    max-height: 80vh;
+    margin: auto;
+
+    
+}
+
+#modal-midia video, #modal-midia img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+.rodape {
+  background-color: #3c2a5a;
+  color: #f3eaff;
+  padding: 60px 13px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  font-family: "Montserrat";
+}
+
+.container-rodape {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.rodape p {
+  margin: 5px 0;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #917ED9;
+    color: #fff;
+}
+
+.logo {
+   
+    width: 120px;
+}
+
+
+.titulo-galeria::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    height: 40px;
+    margin-left: 12px;
+    background-image: url('../imagens/bee.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: static;
+}
+
+@media (max-width: 600px) {
+  
+    .titulo-galeria::after {
+        position: absolute;
+        right: 0;
+        width:80px;
+        margin-left: 0;
+    }
+}

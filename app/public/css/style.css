@@ -801,3 +801,22 @@ textarea{
   font-size: 14px;
   color: #780909 !important;
 }
+
+
+.galeria p {
+  margin: auto;
+  text-align: center;
+}
+
+#link-galeria{
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #917ED9;
+  color: whitesmoke;
+  padding: 10px 15px;
+  border-radius: 7px;
+  text-decoration: none;
+  width: fit-content;
+  font-family: "Montserrat", sans-serif;
+}

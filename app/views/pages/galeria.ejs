@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../imagens/favicon.ico">
+   <link rel="stylesheet" href="css/galeria.css">
+   <!-- Adicione isso no <head> -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+
+
+
+    <title>Galeria</title>
+</head>
+<body>
+<section class="topo">
+    <section class="voltar">
+            <a href=/ > <i class="fas fa-arrow-left"></i> Voltar</a>
+        </section>
+    
+        <img src="../imagens/logo1.png" alt="Florescer" class="logo">
+</section>
+
+    
+    <h1 class="titulo-galeria">Nossa Galeria</h1>
+
+   <section class="galeria">
+    <% if (midias && midias.length > 0) { %>
+        <% midias.forEach(function(midia) { %>
+            <div class="item-galeria">
+               <% if (midia.caminho_arquivo.match(/\.(mp4|webm|ogg)$/i)) { %>
+    <video width="300"
+        class="midia-galeria"
+        data-caminho="/<%= midia.caminho_arquivo %>"
+        data-legenda="<%= midia.legenda %>">
+        <source src="/<%= midia.caminho_arquivo %>" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
+<% } else { %>
+    <img src="/<%= midia.caminho_arquivo %>"
+        alt="<%= midia.legenda %>"
+        width="300"
+        class="midia-galeria"
+        data-caminho="/<%= midia.caminho_arquivo %>"
+        data-legenda="<%= midia.legenda %>"/>
+<% } %>
+                <!-- <p><strong><%= midia.nome_usuario %></strong></p>
+                <p><%= midia.legenda %></p> -->
+            </div>
+        <% }); %>
+    <% } else { %>
+        <p>Nenhuma mídia encontrada.</p>
+    <% } %>
+</section>
+
+
+     <section id="modal-galeria" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:1000;">
+       <span id="fechar-modal">&times;</span>
+       
+        <div id="modal-conteudo">
+            
+            <div id="modal-midia"></div>
+            <p id="modal-legenda"></p>
+        </div>
+    </section>
+
+
+    
+<footer class="rodape">
+  <div class="container-rodape">
+    <p>&copy; 2025 Florescer - SLA. </p>
+    <p>Feito com 💛 por estudantes do 3º ano | INI & EDF</p>
+   
+  </div>
+</footer>
+
+
+
+    <script>
+document.querySelectorAll('.midia-galeria').forEach(function(el) {
+    el.addEventListener('click', function() {
+        var caminho = this.getAttribute('data-caminho');
+        var legenda = this.getAttribute('data-legenda');
+        var modalMidia = document.getElementById('modal-midia');
+        var modalLegenda = document.getElementById('modal-legenda');
+        modalMidia.innerHTML = '';
+
+        if (caminho.match(/\.(mp4|webm|ogg)$/i)) {
+            modalMidia.innerHTML = '<video controls style="max-width:80vw; max-height:70vh;"><source src="' + caminho + '" type="video/mp4"></video>';
+        } else {
+            modalMidia.innerHTML = '<img src="' + caminho + '" style="max-width:80vw; max-height:70vh;" />';
+        }
+        modalLegenda.textContent = legenda || '';
+        document.getElementById('modal-galeria').style.display = 'flex';
+    });
+});
+
+document.getElementById('fechar-modal').onclick = function() {
+    document.getElementById('modal-galeria').style.display = 'none';
+};
+document.getElementById('modal-galeria').onclick = function(e) {
+    if (e.target === this) this.style.display = 'none';
+};
+</script>
+    
+</body>
+</html>

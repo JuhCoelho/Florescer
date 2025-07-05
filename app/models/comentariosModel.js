@@ -6,6 +6,13 @@ const comentariosModel = {
   },
 
 
+    listarTudo: async () => {
+     const [fotos] = await db.query("SELECT * FROM galeria ORDER BY id DESC");
+    return fotos;
+
+},
+
+
  findPage: async (inicio, total) => {
   try {
     const [linhas] = await db.query(
@@ -42,6 +49,10 @@ totalReg: async (dados) => {
     const [result] = await db.query("DELETE FROM comentarios WHERE id = ?", [id]);
     return result;
   },
+
+
+
+
 };
 
 module.exports = comentariosModel;
